@@ -145,12 +145,10 @@ select distinct kh.Makh,kh.Hoten
 from Khachhang kh
 where kh.Makh NOT IN
 (
-	select kh.Makh
+	select hd.Makh
 	from 
-(
 	( CTHD ct 
 	join Hoadon hd ON ct.SOHD = hd.Sohoadon)
-	join Khachhang kh ON hd.Makh=kh.Makh)
 	where ct.Masp in 
 	(
 		select sp.Masp
